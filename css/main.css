@@ -1,0 +1,15 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  height: 100%;
+  font-family: 'Dosis', sans-serif;
+  line-height: 1.6;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+}
+/*# sourceMappingURL=main.css.map */
