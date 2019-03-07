@@ -1,0 +1,60 @@
+.container {
+  max-width: $website-width;
+}
+
+%btn-shared {
+  width: fit-content;
+  display: inline-block;
+  padding: .8rem 1.5rem;
+  transition: all 300ms;
+  border: none;
+  cursor: pointer;
+  border-radius: .5rem;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.btn {
+  &-light {
+    @extend %btn-shared;
+    color: $clr-dark;
+    background: $clr-light;
+  }
+
+  &-dark {
+    @extend %btn-shared;
+    color: $clr-light;
+    background: $clr-dark;
+  }
+}
+
+button[class^='btn-']:hover,
+a[class^='btn-']:hover,
+input[class^='btn-']:hover {
+  background-color: $clr-primary;
+}
+
+// extend to flex row or column
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.flex {
+  display: flex;
+  &-col {
+    flex-direction: column;
+
+    &-center {
+      @extend .flex-center;
+    }
+  }
+  
+  &-row {
+    flex-direction: row;
+
+    &-center {
+      @extend .flex-center;
+    }
+  }
+}
