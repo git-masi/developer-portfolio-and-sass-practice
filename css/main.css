@@ -57,11 +57,35 @@ input[class^='btn-']:hover {
           flex-direction: column;
 }
 
+.flex-col-center {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 .flex-row {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+}
+
+.flex-row-center {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+#home-a .section--text__title::after {
+  position: absolute;
+  bottom: 0%;
+  left: calc((100% - 5rem) / 2);
+  content: '';
+  height: 100%;
+  width: 5rem;
+  border-bottom: 0.3rem solid #ffbc00;
 }
 
 html {
@@ -196,5 +220,31 @@ img {
 .hero-content--text__sub {
   margin-bottom: 1rem;
   font-size: 1.8rem;
+}
+
+#home-a {
+  height: calc(100vh / 2.2);
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "title title title title" "special special special special";
+  grid-gap: 1rem;
+  margin: 1rem 0;
+  padding: 0 10%;
+  text-align: center;
+}
+
+#home-a .section--text {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: title;
+}
+
+#home-a .section--text__title {
+  position: relative;
+}
+
+#home-a .section--specials > i {
+  color: #ffbc00;
 }
 /*# sourceMappingURL=main.css.map */

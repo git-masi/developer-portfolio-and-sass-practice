@@ -49,5 +49,5 @@ document.addEventListener('DOMContentLoaded', init);
 function init(){
   const txtElement = document.querySelector('.typewriter-effect');
   const words = JSON.parse(txtElement.getAttribute('data-words'));
-  new TYPEWRITER(txtElement, words, 3000);
+  new TYPEWRITER(txtElement, words, 2000);
 }

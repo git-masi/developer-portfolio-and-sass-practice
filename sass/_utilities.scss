@@ -46,17 +46,28 @@ input[class^='btn-']:hover {
   display: flex;
   &-col {
     flex-direction: column;
-
     &-center {
+      flex-direction: column;
       @extend .flex-center;
     }
   }
-  
+
   &-row {
     flex-direction: row;
-
     &-center {
+      flex-direction: row;
       @extend .flex-center;
     }
   }
+}
+
+// create bottom border on element, extend on ::after
+%bottom-bar {
+  position: absolute;
+  bottom: 0%;
+  left: calc((100% - #{$bottom-bar-width}) / 2);
+  content: '';
+  height: 100%;
+  width: $bottom-bar-width;
+  border-bottom: .3rem solid $clr-primary;
 }
