@@ -71,3 +71,9 @@ input[class^='btn-']:hover {
   width: $bottom-bar-width;
   border-bottom: .3rem solid $clr-primary;
 }
+
+// set max height for sections
+%section-height {
+  height: auto;
+  max-height: $section-max-height;
+}

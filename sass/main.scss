@@ -18,6 +18,7 @@ body {
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 a:link,
@@ -99,6 +100,7 @@ img {
   display: flex;
   justify-content: center;
 
+  text-align: center;
   background: rgba(0, 0, 0, .2);
 
   &>* {
@@ -124,31 +126,72 @@ img {
   }
 }
 
-#home-a {
-  height: calc(100vh / 2.2);
-  display: grid;
-  grid-template-areas:
+#home {
+  &-a {
+    @extend %section-height;
+    display: grid;
+    grid-template-rows: 1fr 3fr;
+    grid-template-areas:
     "title title title title"
     "special special special special";
-  grid-gap: 1rem;
-  margin: 1rem 0;
-  padding: 0 10%;
-  text-align: center;
+    grid-gap: 1rem;
+    margin: 2rem 0;
+    padding: 1.5rem 10%;
+    text-align: center;
     
-  .section{
-    &--text {
-    grid-area: title;
-      &__title {
-        position: relative;
-        &::after {
-          @extend %bottom-bar
+    .section{
+      &--text {
+        grid-area: title;
+        &__title {
+          position: relative;
+          &::after {
+            @extend %bottom-bar
+          }
+        }
+      }
+      
+      &--specials {
+        padding: .7rem .35rem;
+        border: .1rem solid $clr-dark;
+        border-radius: .7rem;
+        box-shadow: 0 .3rem .7rem 0 $clr-dark;
+        & > i {
+          color: $clr-primary;
         }
       }
     }
+  }
+  
+  &-b {
+    @extend %section-height;
+    
+    .stats-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      
+      text-align: center;
+      
+      &--card {
+        padding: 3rem 0;
 
-    &--specials {
-      & > i {
-        color: $clr-primary;
+        &:nth-of-type(odd) {
+          background: lighten($clr-dark-blue, 8%);
+          color: $clr-light;
+        }
+
+        &:nth-of-type(even) {
+          background: darken($clr-light, 10%);
+          color: $clr-dark;
+        }
+
+        &__title,
+        &__number {
+         font-size: 2.4rem; 
+        }
+
+        &>* {
+          padding: 1rem 0;
+        }
       }
     }
   }
