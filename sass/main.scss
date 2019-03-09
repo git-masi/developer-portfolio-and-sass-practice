@@ -9,6 +9,7 @@ html {
 
 body {
   height: 100%;
+  background: aliceblue;
   font-family: 'Dosis', sans-serif;
   line-height: 1.6;
   font-size: 1.6rem;
@@ -92,9 +93,9 @@ img {
 
 .hero-content {
   position: absolute;
-  top: 25%;
+  top: 5rem;
   left: 0;
-  width: 40%;
+  width: 100%;
   padding: 2rem 0;
   display: flex;
   justify-content: center;
