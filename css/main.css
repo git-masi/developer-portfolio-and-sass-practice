@@ -35,7 +35,7 @@ input[class^='btn-']:hover {
   background-color: #ffbc00;
 }
 
-.flex-col-center, .flex-row-center, #home-c .section--cards i {
+.flex-col-center, .flex-row-center, #home-c .section--cards i, #home-c .section--cards i::after {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -346,6 +346,11 @@ img {
   right: -2rem;
   width: 4rem;
   height: 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1.8rem;
+  color: #333;
   background: #ffbc00;
   border-radius: 50%;
   -webkit-transition: all 300ms;
@@ -355,11 +360,29 @@ img {
 #home-c .section--cards i:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
+  color: #333;
   background: #ffbc00;
 }
 
 #home-c .section--cards i:hover::after {
+  color: #f5f5f5;
   background: #86437a;
+}
+
+#home-c .section--cards:nth-of-type(2) i::after {
+  content: '1';
+}
+
+#home-c .section--cards:nth-of-type(3) i::after {
+  content: '2';
+}
+
+#home-c .section--cards:nth-of-type(4) i::after {
+  content: '3';
+}
+
+#home-c .section--cards:nth-of-type(5) i::after {
+  content: '4';
 }
 
 footer {

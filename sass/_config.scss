@@ -15,3 +15,12 @@ $clr-dark-blue: #222a43;
 $hero-img: url('https://images.unsplash.com/photo-1551504057-af7151c788e3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9');
 $hero-img-alt1: url('https://images.unsplash.com/photo-1448550603489-a7e43b0da4d2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9');
 $hero-img-alt2: url('https://images.unsplash.com/photo-1543411173-82669c51bbed?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9');
+
+// text color function
+@function set-text-color($color){
+  @if(lightness($color) > 49){
+    @return $clr-dark; 
+  } @else {
+    @return $clr-light;
+  }
+}

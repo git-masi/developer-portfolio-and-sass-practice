@@ -223,20 +223,40 @@ img {
             right: -2rem;
             width: 4rem;
             height: 4rem;
+            display: flex;
+            @extend %flex-center;
+            font-size: 1.8rem;
+            color: set-text-color($clr-primary);
             background: $clr-primary;
             border-radius: 50%;
 
             transition: all 300ms;
           }
-
+          
+          
           &:hover {
             transform: scale(1.1);
+            color: set-text-color($clr-primary);
             background: $clr-primary;
-
+            
             &::after{
+              color: set-text-color($clr-accent-purple);
               background: $clr-accent-purple;
             }
           }
+        }
+
+        &:nth-of-type(2) i::after {
+          content: '1';
+        }
+        &:nth-of-type(3) i::after {
+          content: '2';
+        }
+        &:nth-of-type(4) i::after {
+          content: '3';
+        }
+        &:nth-of-type(5) i::after {
+          content: '4';
         }
       }
     }
