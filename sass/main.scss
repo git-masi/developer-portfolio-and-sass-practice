@@ -110,6 +110,11 @@ img {
     &__main {
       font-size: 5rem;
       line-height: 6rem;
+
+      & .typewriter-effect {
+        padding-right: .6rem;
+        border-right: .2rem solid $clr-light;
+      }
     }
 
     &__sub {

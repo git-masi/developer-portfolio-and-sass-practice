@@ -185,6 +185,11 @@ img {
   line-height: 6rem;
 }
 
+.hero-content--text__main .typewriter-effect {
+  padding-right: .6rem;
+  border-right: 0.2rem solid #f5f5f5;
+}
+
 .hero-content--text__sub {
   margin-bottom: 1rem;
   font-size: 1.8rem;
