@@ -37,7 +37,7 @@ input[class^='btn-']:hover {
 }
 
 // extend to flex row or column
-.flex-center {
+%flex-center {
   justify-content: center;
   align-items: center;
 }
@@ -45,18 +45,22 @@ input[class^='btn-']:hover {
 .flex {
   display: flex;
   &-col {
+    display: flex;
     flex-direction: column;
     &-center {
+      display: flex;
       flex-direction: column;
-      @extend .flex-center;
+      @extend %flex-center;
     }
   }
-
+  
   &-row {
+    display: flex;
     flex-direction: row;
     &-center {
+      display: flex;
       flex-direction: row;
-      @extend .flex-center;
+      @extend %flex-center;
     }
   }
 }
@@ -72,8 +76,21 @@ input[class^='btn-']:hover {
   border-bottom: .3rem solid $clr-primary;
 }
 
-// set max height for sections
+// set max height for sections where needed
 %section-height {
   height: auto;
   max-height: $section-max-height;
+}
+
+// set home page card container grid
+%section-grid-container {
+  display: grid;
+  grid-template-rows: 1fr 3fr;
+  grid-template-areas:
+    "title title title title"
+    "cards cards cards cards";
+  grid-gap: 1rem;
+  margin: 2rem 0;
+  padding: 1.5rem 10%;
+  text-align: center;
 }

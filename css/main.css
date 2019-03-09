@@ -35,7 +35,7 @@ input[class^='btn-']:hover {
   background-color: #ffbc00;
 }
 
-.flex-center, .flex-col-center, .flex-row-center {
+.flex-col-center, .flex-row-center, #home-c .section--cards i {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -51,6 +51,9 @@ input[class^='btn-']:hover {
 }
 
 .flex-col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -58,6 +61,9 @@ input[class^='btn-']:hover {
 }
 
 .flex-col-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -65,6 +71,9 @@ input[class^='btn-']:hover {
 }
 
 .flex-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -72,13 +81,16 @@ input[class^='btn-']:hover {
 }
 
 .flex-row-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
 }
 
-#home-a .section--text__title::after {
+#home-a .section--text__title::after, #home-c .section--text__title::after {
   position: absolute;
   bottom: 0%;
   left: calc((100% - 5rem) / 2);
@@ -91,6 +103,18 @@ input[class^='btn-']:hover {
 #home-a, #home-b {
   height: auto;
   max-height: calc(1080px / 3);
+}
+
+#home-a, #home-c {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 3fr;
+      grid-template-rows: 1fr 3fr;
+      grid-template-areas: "title title title title" "cards cards cards cards";
+  grid-gap: 1rem;
+  margin: 2rem 0;
+  padding: 1.5rem 10%;
+  text-align: center;
 }
 
 html {
@@ -230,18 +254,6 @@ img {
   font-size: 1.8rem;
 }
 
-#home-a {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: 1fr 3fr;
-      grid-template-rows: 1fr 3fr;
-      grid-template-areas: "title title title title" "special special special special";
-  grid-gap: 1rem;
-  margin: 2rem 0;
-  padding: 1.5rem 10%;
-  text-align: center;
-}
-
 #home-a .section--text {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
@@ -253,7 +265,7 @@ img {
   position: relative;
 }
 
-#home-a .section--specials {
+#home-a .section--cards {
   padding: .7rem .35rem;
   border: 0.1rem solid #333;
   border-radius: .7rem;
@@ -261,7 +273,7 @@ img {
           box-shadow: 0 0.3rem 0.7rem 0 #333;
 }
 
-#home-a .section--specials > i {
+#home-a .section--cards > i {
   color: #ffbc00;
 }
 
@@ -293,5 +305,68 @@ img {
 
 #home-b .stats-container--card > * {
   padding: 1rem 0;
+}
+
+#home-c .section--text {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: title;
+}
+
+#home-c .section--text__title {
+  position: relative;
+}
+
+#home-c .section--cards {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#home-c .section--cards i {
+  position: relative;
+  height: 8rem;
+  width: 8rem;
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #f5f5f5;
+  background: #86437a;
+  border-radius: 50%;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+}
+
+#home-c .section--cards i::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -2rem;
+  width: 4rem;
+  height: 4rem;
+  background: #ffbc00;
+  border-radius: 50%;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+}
+
+#home-c .section--cards i:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  background: #ffbc00;
+}
+
+#home-c .section--cards i:hover::after {
+  background: #86437a;
+}
+
+footer {
+  height: 5rem;
+  width: 100%;
+  text-align: center;
+  background: #222a43;
+  color: #f5f5f5;
 }
 /*# sourceMappingURL=main.css.map */
